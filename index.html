@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boris Cherny — Claude Code 创始人公开发言整理</title>
+  <meta name="description" content="Boris Cherny（Anthropic Claude Code 创始人兼负责人）在 Twitter/X、播客、采访中的公开发言，按主题分类整理。包含工作流、产品哲学、对软件工程未来的判断。" />
+  <meta property="og:title" content="Boris Cherny — Claude Code 创始人公开发言整理" />
+  <meta property="og:description" content="Claude Code 创始人 Boris Cherny 的公开发言汇总：工作流、产品哲学、未来判断。" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:creator" content="@bcherny" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+          colors: {
+            brand: { DEFAULT: '#f97316', light: '#fb923c', dark: '#ea580c' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0f0f0f; }
+    ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+    .nav-link.active { color: #f97316; border-left-color: #f97316; }
+    @media (max-width: 1023px) { #sidebar { display: none; } }
+  </style>
+</head>
+<body class="bg-[#0a0a0a] text-gray-200 font-sans antialiased">
+
+  <!-- Top nav -->
+  <header class="sticky top-0 z-50 border-b border-white/5 bg-[#0a0a0a]/90 backdrop-blur">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="text-brand font-semibold text-sm tracking-wide">Boris Cherny</span>
+        <span class="text-white/20 hidden sm:inline">·</span>
+        <span class="text-white/40 text-sm hidden sm:inline">Claude Code 创始人公开发言</span>
+      </div>
+      <div class="flex items-center gap-4 text-sm">
+        <a href="https://x.com/bcherny" target="_blank" rel="noopener" class="text-white/40 hover:text-white/80 transition-colors">@bcherny ↗</a>
+        <a href="https://github.com/YuqingNicole/boris-cherny-claude-code" target="_blank" rel="noopener" class="text-white/40 hover:text-white/80 transition-colors hidden sm:inline">GitHub ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex gap-10 py-10">
+
+    <!-- Sidebar nav -->
+    <aside id="sidebar" class="w-56 flex-shrink-0">
+      <nav class="sticky top-24 space-y-0.5 text-sm" id="nav">
+        <p class="text-white/30 text-xs font-medium uppercase tracking-widest mb-3 px-3">目录</p>
+        <a href="#profile" class="nav-link flex items-center gap-2 px-3 py-1.5 rounded text-white/50 hover:text-white border-l-2 border-transparent hover:border-white/20 transition-all">人物背景</a>
+        <a href="#origin" class="nav-link flex items-center gap-2 px-3 py-1.5 rounded text-white/50 hover:text-white border-l-2 border-transparent hover:border-white/20 transition-all">诞生故事</a>
+        <a href="#philosophy" class="nav-link flex items-center gap-2 px-3 py-1.5 rounded text-white/50 hover:text-white border-l-2 border-transparent hover:border-white/20 transition-all">产品哲学</a>
+        <a href="#future" class="nav-link flex items-center gap-2 px-3 py-1.5 rounded text-white/50 hover:text-white border-l-2 border-transparent hover:border-white/20 transition-all">未来判断</a>
+        <a href="#workflow" class="nav-link flex items-center gap-2 px-3 py-1.5 rounded text-white/50 hover:text-white border-l-2 border-transparent hover:border-white/20 transition-all">工作流实践</a>
+        <a href="#team" class="nav-link flex items-center gap-2 px-3 py-1.5 rounded text-white/50 hover:text-white border-l-2 border-transparent hover:border-white/20 transition-all">团队设计</a>
+        <a href="#principles" class="nav-link flex items-center gap-2 px-3 py-1.5 rounded text-white/50 hover:text-white border-l-2 border-transparent hover:border-white/20 transition-all">核心原则</a>
+        <a href="#sources" class="nav-link flex items-center gap-2 px-3 py-1.5 rounded text-white/50 hover:text-white border-l-2 border-transparent hover:border-white/20 transition-all">来源</a>
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <main class="flex-1 min-w-0 max-w-3xl">
+
+      <!-- Hero -->
+      <section class="mb-16">
+        <div class="flex items-center gap-2 text-brand text-sm font-medium mb-4">
+          <span>Anthropic</span>
+          <span class="text-white/20">·</span>
+          <span>Claude Code Creator</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-bold text-white leading-tight mb-4">
+          Boris Cherny<br/>
+          <span class="text-white/40 font-normal">公开发言整理</span>
+        </h1>
+        <p class="text-white/50 text-base leading-relaxed max-w-xl">
+          Claude Code 创始人兼负责人。涵盖他在 Twitter/X、播客、采访中关于产品哲学、工作流、软件工程未来的所有公开发言，按主题分类整理。
+        </p>
+        <div class="flex flex-wrap gap-3 mt-6 text-xs">
+          <span class="bg-white/5 border border-white/10 rounded-full px-3 py-1 text-white/60">最近更新：2026-03-25</span>
+          <span class="bg-white/5 border border-white/10 rounded-full px-3 py-1 text-white/60">来源：X · Lenny's Podcast · VentureBeat</span>
+          <a href="https://x.com/bcherny" target="_blank" rel="noopener" class="bg-brand/10 border border-brand/20 rounded-full px-3 py-1 text-brand hover:bg-brand/20 transition-colors">@bcherny ↗</a>
+        </div>
+      </section>
+
+      <!-- Section: Profile -->
+      <section id="profile" class="mb-14 scroll-mt-20">
+        <h2 class="text-xl font-semibold text-white mb-6 flex items-center gap-3">
+          <span class="text-brand text-sm font-mono">01</span> 人物背景
+        </h2>
+        <div class="grid sm:grid-cols-2 gap-3">
+          <div class="bg-white/[0.03] border border-white/[0.07] rounded-xl p-4">
+            <p class="text-white/40 text-xs mb-1">身份</p>
+            <p class="text-white/80 text-sm">Claude Code 创始人兼负责人（Creator & Head）at Anthropic</p>
+          </div>
+          <div class="bg-white/[0.03] border border-white/[0.07] rounded-xl p-4">
+            <p class="text-white/40 text-xs mb-1">著作</p>
+            <p class="text-white/80 text-sm">《Programming TypeScript》O'Reilly 出版</p>
+          </div>
+          <div class="bg-white/[0.03] border border-white/[0.07] rounded-xl p-4">
+            <p class="text-white/40 text-xs mb-1">Cursor 插曲</p>
+            <p class="text-white/80 text-sm">曾短暂加入 Cursor，<strong class="text-white">两周后回归</strong> Anthropic</p>
+          </div>
+          <div class="bg-white/[0.03] border border-white/[0.07] rounded-xl p-4">
+            <p class="text-white/40 text-xs mb-1">现职</p>
+            <p class="text-white/80 text-sm">同时负责 Claude Code + Cowork（企业 AI 协作产品）</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Origin -->
+      <section id="origin" class="mb-14 scroll-mt-20">
+        <h2 class="text-xl font-semibold text-white mb-6 flex items-center gap-3">
+          <span class="text-brand text-sm font-mono">02</span> Claude Code 的诞生故事
+        </h2>
+        <blockquote class="border-l-2 border-brand pl-5 mb-6">
+          <p class="text-white/70 italic text-base leading-relaxed">"It was an accident that changed everything."</p>
+          <footer class="text-white/30 text-sm mt-2">— PCMag 采访标题</footer>
+        </blockquote>
+        <p class="text-white/60 leading-relaxed mb-6">
+          Claude Code 最初只是一个简单的<strong class="text-white/80">终端原型（terminal-based prototype）</strong>，不是经过精心规划的大项目，而是一个快速 hack 演变而来的工具。
+        </p>
+        <div class="grid grid-cols-3 gap-3 mb-6">
+          <div class="bg-brand/5 border border-brand/15 rounded-xl p-4 text-center">
+            <p class="text-brand text-2xl font-bold">4%</p>
+            <p class="text-white/40 text-xs mt-1">GitHub 公开 commit</p>
+          </div>
+          <div class="bg-brand/5 border border-brand/15 rounded-xl p-4 text-center">
+            <p class="text-brand text-2xl font-bold">2x</p>
+            <p class="text-white/40 text-xs mt-1">上月 DAU 翻倍</p>
+          </div>
+          <div class="bg-brand/5 border border-brand/15 rounded-xl p-4 text-center">
+            <p class="text-brand text-2xl font-bold">$1B</p>
+            <p class="text-white/40 text-xs mt-1">年化 ARR</p>
+          </div>
+        </div>
+        <div class="bg-white/[0.03] border border-white/[0.07] rounded-xl p-5">
+          <p class="text-white/50 text-sm font-medium mb-2">🔁 Cursor 插曲的意义</p>
+          <p class="text-white/60 text-sm leading-relaxed">Boris 曾离开 Anthropic 去 Cursor，仅两周就返回。这件事本身说明他对 Claude Code 有强烈的未竟心愿——不是表演性的，而是真实的执念。</p>
+        </div>
+      </section>
+
+      <!-- Section: Philosophy -->
+      <section id="philosophy" class="mb-14 scroll-mt-20">
+        <h2 class="text-xl font-semibold text-white mb-6 flex items-center gap-3">
+          <span class="text-brand text-sm font-mono">03</span> 产品哲学
+        </h2>
+
+        <div class="space-y-6">
+          <div>
+            <h3 class="text-white/80 font-medium mb-3">满足「潜在需求」，而非用户说出口的需求</h3>
+            <p class="text-white/55 text-sm leading-relaxed">Claude Code 的成功来自挖掘用户没有明确表达、但真实存在的需求（Latent Demand），而不是照着用户反馈单做。用户说"我要更快的马"，但真正的需求是"更快地到达目的地"。</p>
+          </div>
+
+          <div>
+            <h3 class="text-white/80 font-medium mb-3">验证循环是核心</h3>
+            <blockquote class="border-l-2 border-brand/50 pl-4 mb-3">
+              <p class="text-white/65 italic text-sm leading-relaxed">"Probably the most important thing to get great results out of Claude Code — give Claude a way to verify its work. If Claude has that feedback loop, it will 2-3x the quality of the final result."</p>
+              <footer class="text-white/30 text-xs mt-1.5">— @bcherny，X thread，2026-01-02</footer>
+            </blockquote>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+              <span class="bg-white/5 rounded-lg px-3 py-2 text-white/50 text-center">浏览器 UI 测试</span>
+              <span class="bg-white/5 rounded-lg px-3 py-2 text-white/50 text-center">Bash 命令</span>
+              <span class="bg-white/5 rounded-lg px-3 py-2 text-white/50 text-center">测试套件</span>
+              <span class="bg-white/5 rounded-lg px-3 py-2 text-white/50 text-center">Chrome 扩展</span>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-white/80 font-medium mb-3">Compounding Engineering — 每个错误都是一条规则</h3>
+            <blockquote class="border-l-2 border-brand/50 pl-4 mb-3">
+              <p class="text-white/65 italic text-sm leading-relaxed">"Anytime we see Claude do something incorrectly we add it to the CLAUDE.md, so Claude knows not to do it next time."</p>
+              <footer class="text-white/30 text-xs mt-1.5">— @bcherny</footer>
+            </blockquote>
+            <p class="text-white/50 text-sm">Code review 时 tag <code class="font-mono text-brand/80 bg-white/5 px-1 rounded">@claude</code>，让 Claude 自己把规则写进 CLAUDE.md。团队合作越久，AI 越智能。（概念来自 Dan Shipper）</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Future -->
+      <section id="future" class="mb-14 scroll-mt-20">
+        <h2 class="text-xl font-semibold text-white mb-6 flex items-center gap-3">
+          <span class="text-brand text-sm font-mono">04</span> 对软件工程未来的判断
+        </h2>
+
+        <div class="bg-gradient-to-br from-brand/10 to-transparent border border-brand/20 rounded-xl p-6 mb-6">
+          <p class="text-brand font-semibold text-lg mb-2">"Coding is Solved"</p>
+          <p class="text-white/60 text-sm leading-relaxed">不是"不需要程序员了"，而是：<strong class="text-white/80">写代码本身不再是瓶颈</strong>。软件工程师的角色将从"写代码的人"演变成"指挥 AI 舰队的人"。</p>
+        </div>
+
+        <blockquote class="border-l-2 border-white/20 pl-5 mb-6">
+          <p class="text-white/60 italic text-sm leading-relaxed">"The tools to multiply human output by a factor of five are already here. They require only a willingness to stop thinking of AI as an assistant and start treating it as a workforce."</p>
+          <footer class="text-white/30 text-xs mt-1.5">— @bcherny，via VentureBeat</footer>
+        </blockquote>
+
+        <div class="bg-white/[0.03] border border-white/[0.07] rounded-xl p-5 mb-4">
+          <p class="text-white/70 text-sm font-medium mb-2">🎮 Starcraft 比喻</p>
+          <p class="text-white/50 text-sm leading-relaxed">传统开发 = 内循环（写函数 → 测试 → 写下一个）。新方式 = 像打星际争霸，你是战略指挥官，管理多支 AI 并行部队。一个人 = 一个小型工程部门的产出。</p>
+        </div>
+
+        <div class="bg-white/[0.03] border border-white/[0.07] rounded-xl p-5">
+          <p class="text-white/70 text-sm font-medium mb-2">🏢 Spotify 案例（2026年2月）</p>
+          <p class="text-white/50 text-sm leading-relaxed">Spotify 最好的开发者自 2025年12月起没写过一行代码。Boris 认为这个转型对工程师群体是真实冲击——不是"被淘汰"，而是"角色重新定义"。</p>
+        </div>
+      </section>
+
+      <!-- Section: Workflow -->
+      <section id="workflow" class="mb-14 scroll-mt-20">
+        <h2 class="text-xl font-semibold text-white mb-2 flex items-center gap-3">
+          <span class="text-brand text-sm font-mono">05</span> 工作流与技术实践
+        </h2>
+        <p class="text-white/30 text-xs mb-6">来源：@bcherny X thread（2026-01-02 & 2026-01-31）</p>
+
+        <div class="space-y-8">
+
+          <!-- Parallel agents -->
+          <div>
+            <h3 class="text-white/80 font-medium mb-3">并行代理工作流</h3>
+            <div class="bg-white/[0.03] border border-white/[0.07] rounded-xl p-5">
+              <div class="grid sm:grid-cols-2 gap-4 mb-4">
+                <div>
+                  <p class="text-white/30 text-xs mb-2">终端</p>
+                  <p class="text-white/60 text-sm">5 个 Claude Code 实例，分 5 个 tab（编号 1-5）</p>
+                  <p class="text-white/40 text-xs mt-1">每个 tab 独立 git worktree，避免冲突</p>
+                </div>
+                <div>
+                  <p class="text-white/30 text-xs mb-2">浏览器</p>
+                  <p class="text-white/60 text-sm">同时跑 5-10 个 claude.ai/code session</p>
+                  <p class="text-white/40 text-xs mt-1">早上手机 iOS 启动，电脑接力</p>
+                </div>
+              </div>
+              <code class="font-mono text-xs text-white/40 block">~/repo-1 $ &nbsp; ~/repo-2 $ &nbsp; ~/repo-3 $ &nbsp; ~/repo-4 $ &nbsp; ~/repo-5 $</code>
+            </div>
+          </div>
+
+          <!-- Model choice -->
+          <div>
+            <h3 class="text-white/80 font-medium mb-3">模型选择：永远用最慢最强的</h3>
+            <blockquote class="border-l-2 border-brand/50 pl-4 mb-3">
+              <p class="text-white/65 italic text-sm leading-relaxed">"I use Opus 4.5 with thinking for everything. It's the best coding model I've ever used, and even though it's bigger & slower than Sonnet, since you have to steer it less and it's better at tool use, it is almost always faster than using a smaller model in the end."</p>
+              <footer class="text-white/30 text-xs mt-1.5">— @bcherny</footer>
+            </blockquote>
+            <div class="bg-white/[0.03] border border-white/[0.07] rounded-lg px-4 py-3 text-sm text-white/50">
+              💡 瓶颈不是 token 生成速度，是人花在<strong class="text-white/70">纠正 AI 错误</strong>上的时间。用更聪明的模型，前期「算力税」换来后期「纠错税」的消除。
+            </div>
+          </div>
+
+          <!-- CLAUDE.md -->
+          <div>
+            <h3 class="text-white/80 font-medium mb-3">CLAUDE.md：团队共享的 AI 记忆</h3>
+            <pre class="bg-[#111] border border-white/[0.07] rounded-xl p-4 text-xs font-mono text-white/60 overflow-x-auto mb-3"><code><span class="text-white/30"># CLAUDE.md</span>
+
+<span class="text-brand/80">**Always use `bun`, not `npm`.**</span>
+
+bun run typecheck
+bun run test -- -t "test name"
+bun run lint:file -- "file1.ts"
+
+<span class="text-white/30"># PR 中动态更新：</span>
+nit: use string literal, not ts enum
+
+@claude add to CLAUDE.md to never use enums,
+always prefer literal unions</code></pre>
+            <p class="text-white/40 text-xs">整个团队每周多次贡献内容，code review 时让 Claude 自己更新规则。</p>
+          </div>
+
+          <!-- Plan mode -->
+          <div>
+            <h3 class="text-white/80 font-medium mb-3">Plan Mode 工作流</h3>
+            <div class="flex items-center gap-2 text-sm text-white/50 mb-3 flex-wrap">
+              <span class="bg-white/5 rounded px-2 py-1">1. shift+tab×2 进入 Plan Mode</span>
+              <span class="text-white/20">→</span>
+              <span class="bg-white/5 rounded px-2 py-1">2. 反复打磨计划</span>
+              <span class="text-white/20">→</span>
+              <span class="bg-white/5 rounded px-2 py-1">3. auto-accept 模式</span>
+              <span class="text-white/20">→</span>
+              <span class="bg-brand/10 border border-brand/20 rounded px-2 py-1 text-brand/80">4. Claude 一次性实现</span>
+            </div>
+            <p class="text-white/40 text-sm">团队变体：Claude A 写计划 → Claude B 以 staff engineer 角色审计划。</p>
+          </div>
+
+          <!-- Slash commands -->
+          <div>
+            <h3 class="text-white/80 font-medium mb-3">Slash Commands & Subagents</h3>
+            <div class="grid sm:grid-cols-2 gap-3">
+              <div class="bg-white/[0.03] border border-white/[0.07] rounded-xl p-4">
+                <p class="text-white/30 text-xs mb-2">最常用命令</p>
+                <code class="font-mono text-brand/80 text-sm">/commit-push-pr</code>
+                <p class="text-white/40 text-xs mt-2">一键：commit → push → 开 PR。存于 <code class="font-mono">.claude/commands/</code></p>
+              </div>
+              <div class="bg-white/[0.03] border border-white/[0.07] rounded-xl p-4">
+                <p class="text-white/30 text-xs mb-2">子代理目录</p>
+                <div class="font-mono text-xs text-white/50 space-y-0.5">
+                  <div>code-simplifier.md</div>
+                  <div>verify-app.md</div>
+                  <div>build-validator.md</div>
+                  <div>oncall-guide.md</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PostToolUse Hook -->
+          <div>
+            <h3 class="text-white/80 font-medium mb-3">PostToolUse Hook — 自动格式化</h3>
+            <pre class="bg-[#111] border border-white/[0.07] rounded-xl p-4 text-xs font-mono text-white/60 overflow-x-auto"><code><span class="text-white/30">"PostToolUse":</span> [{
+  <span class="text-brand/70">"matcher"</span>: <span class="text-green-400/70">"Write|Edit"</span>,
+  <span class="text-brand/70">"hooks"</span>: [{
+    <span class="text-brand/70">"type"</span>: <span class="text-green-400/70">"command"</span>,
+    <span class="text-brand/70">"command"</span>: <span class="text-green-400/70">"bun run format || true"</span>
+  }]
+}]</code></pre>
+          </div>
+
+          <!-- MCP -->
+          <div>
+            <h3 class="text-white/80 font-medium mb-3">工具集成（MCP）</h3>
+            <div class="grid sm:grid-cols-3 gap-2 mb-3 text-sm text-center">
+              <div class="bg-white/[0.03] border border-white/[0.07] rounded-lg py-3">
+                <p class="text-white/70">Slack MCP</p>
+                <p class="text-white/30 text-xs">搜索 / 发帖</p>
+              </div>
+              <div class="bg-white/[0.03] border border-white/[0.07] rounded-lg py-3">
+                <p class="text-white/70">BigQuery</p>
+                <p class="text-white/30 text-xs">bq CLI 跑查询</p>
+              </div>
+              <div class="bg-white/[0.03] border border-white/[0.07] rounded-lg py-3">
+                <p class="text-white/70">Sentry</p>
+                <p class="text-white/30 text-xs">抓错误日志</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- RAG decision -->
+          <div>
+            <h3 class="text-white/80 font-medium mb-3">RAG 的取舍</h3>
+            <blockquote class="border-l-2 border-white/20 pl-4">
+              <p class="text-white/60 italic text-sm leading-relaxed">"We did RAG early on then unshipped it for a number of reasons: privacy, security, reliability, index staleness. Overall, we found that agentic search gave better results with fewer tradeoffs."</p>
+              <footer class="text-white/30 text-xs mt-1.5">— @bcherny，X，2026年2月</footer>
+            </blockquote>
+          </div>
+
+          <!-- Auto mode -->
+          <div>
+            <h3 class="text-white/80 font-medium mb-3">Auto Mode（2026-03 新功能）</h3>
+            <blockquote class="border-l-2 border-brand/50 pl-4">
+              <p class="text-white/65 italic text-sm leading-relaxed">"New in Claude Code: auto mode. Instead of approving every file write and bash command, or skipping permissions entirely, auto mode lets Claude make permission decisions on your behalf. Safeguards check each action before it runs."</p>
+              <footer class="text-white/30 text-xs mt-1.5">— @bcherny，X，2026-03-12</footer>
+            </blockquote>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Section: Team -->
+      <section id="team" class="mb-14 scroll-mt-20">
+        <h2 class="text-xl font-semibold text-white mb-6 flex items-center gap-3">
+          <span class="text-brand text-sm font-mono">06</span> 团队管理与组织设计
+        </h2>
+        <div class="space-y-4">
+          <div class="bg-white/[0.03] border border-white/[0.07] rounded-xl p-5">
+            <p class="text-white/70 font-medium mb-2">「故意欠配置」策略（Intentional Underfunding）</p>
+            <p class="text-white/50 text-sm leading-relaxed">Claude Code 团队刻意保持小规模——不是资源不足，而是有意为之。小团队被迫更创造性地使用 AI 工具；给团队<strong class="text-white/70">无限 token 额度</strong>，让他们充分体验自己做的产品。</p>
+            <p class="text-white/30 text-xs mt-3">与 Anthropic 总裁 Daniela Amodei 的"Do more with less"战略一致</p>
+          </div>
+          <div class="bg-white/[0.03] border border-white/[0.07] rounded-xl p-5">
+            <p class="text-white/70 font-medium mb-2">工程师 = 产品最重度用户</p>
+            <p class="text-white/50 text-sm leading-relaxed">Boris 的整个工作流本身就是一个活广告。Claude Code 团队是自己产品的最重度用户，产品决策直接来源于真实使用体验。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Principles -->
+      <section id="principles" class="mb-14 scroll-mt-20">
+        <h2 class="text-xl font-semibold text-white mb-6 flex items-center gap-3">
+          <span class="text-brand text-sm font-mono">07</span> 核心原则
+        </h2>
+        <p class="text-white/40 text-sm mb-5">Lenny's Podcast 中，Boris 提到他有 3 条原则会和每个新成员分享。</p>
+        <div class="space-y-3">
+          <div class="flex gap-4 bg-white/[0.03] border border-white/[0.07] rounded-xl p-5">
+            <span class="text-brand font-bold text-lg w-6 flex-shrink-0">1</span>
+            <div>
+              <p class="text-white/70 font-medium mb-1">验证循环优先</p>
+              <p class="text-white/50 text-sm">给 Claude 一种验证自己工作的方式，这是获得好结果最重要的事。带来 2-3x 的质量提升。</p>
+            </div>
+          </div>
+          <div class="flex gap-4 bg-white/[0.03] border border-white/[0.07] rounded-xl p-5">
+            <span class="text-brand font-bold text-lg w-6 flex-shrink-0">2</span>
+            <div>
+              <p class="text-white/70 font-medium mb-1">CLAUDE.md 是团队的共同记忆</p>
+              <p class="text-white/50 text-sm">每个错误都是一条规则，持续迭代。团队合作越久，AI 越智能——这就是 Compounding Engineering。</p>
+            </div>
+          </div>
+          <div class="flex gap-4 bg-white/[0.03] border border-white/[0.07] rounded-xl p-5">
+            <span class="text-brand font-bold text-lg w-6 flex-shrink-0">3</span>
+            <div>
+              <p class="text-white/70 font-medium mb-1">计划比实现更重要</p>
+              <p class="text-white/50 text-sm">在 Plan mode 投入精力，让 Claude 一次性实现。事情跑偏时不要硬推——退回 Plan mode 重新规划。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Sources -->
+      <section id="sources" class="mb-14 scroll-mt-20">
+        <h2 class="text-xl font-semibold text-white mb-6 flex items-center gap-3">
+          <span class="text-brand text-sm font-mono">08</span> 来源
+        </h2>
+        <div class="grid sm:grid-cols-2 gap-3">
+          <a href="https://www.lennysnewsletter.com/p/head-of-claude-code-what-happens" target="_blank" rel="noopener" class="group bg-white/[0.03] border border-white/[0.07] hover:border-brand/30 rounded-xl p-4 transition-colors block">
+            <p class="text-white/30 text-xs mb-1">播客 · 2026年3月</p>
+            <p class="text-white/70 text-sm group-hover:text-white transition-colors">Lenny's Podcast: Head of Claude Code — What happens after coding is solved ↗</p>
+          </a>
+          <a href="https://x.com/bcherny/status/2007179832300581177" target="_blank" rel="noopener" class="group bg-white/[0.03] border border-white/[0.07] hover:border-brand/30 rounded-xl p-4 transition-colors block">
+            <p class="text-white/30 text-xs mb-1">X Thread · 2026-01-02</p>
+            <p class="text-white/70 text-sm group-hover:text-white transition-colors">@bcherny 的 13 条工作流 tips ↗</p>
+          </a>
+          <a href="https://x.com/bcherny/status/2017742741636321619" target="_blank" rel="noopener" class="group bg-white/[0.03] border border-white/[0.07] hover:border-brand/30 rounded-xl p-4 transition-colors block">
+            <p class="text-white/30 text-xs mb-1">X Thread · 2026-01-31</p>
+            <p class="text-white/70 text-sm group-hover:text-white transition-colors">@bcherny 的 10 条团队 tips ↗</p>
+          </a>
+          <a href="https://x.com/bcherny/status/2036555259997462541" target="_blank" rel="noopener" class="group bg-white/[0.03] border border-white/[0.07] hover:border-brand/30 rounded-xl p-4 transition-colors block">
+            <p class="text-white/30 text-xs mb-1">X · 2026-03-12</p>
+            <p class="text-white/70 text-sm group-hover:text-white transition-colors">Auto Mode 公告 ↗</p>
+          </a>
+          <a href="https://venturebeat.com/technology/the-creator-of-claude-code-just-revealed-his-workflow-and-developers-are" target="_blank" rel="noopener" class="group bg-white/[0.03] border border-white/[0.07] hover:border-brand/30 rounded-xl p-4 transition-colors block">
+            <p class="text-white/30 text-xs mb-1">VentureBeat · 2026年1月</p>
+            <p class="text-white/70 text-sm group-hover:text-white transition-colors">The creator of Claude Code just revealed his workflow ↗</p>
+          </a>
+          <a href="https://howborisusesclaudecode.com/" target="_blank" rel="noopener" class="group bg-white/[0.03] border border-white/[0.07] hover:border-brand/30 rounded-xl p-4 transition-colors block">
+            <p class="text-white/30 text-xs mb-1">社区整理</p>
+            <p class="text-white/70 text-sm group-hover:text-white transition-colors">howborisusesclaudecode.com ↗</p>
+          </a>
+        </div>
+      </section>
+
+      <footer class="border-t border-white/[0.07] pt-6 text-white/25 text-xs flex items-center justify-between">
+        <span>最后更新：2026-03-25</span>
+        <a href="https://github.com/YuqingNicole/boris-cherny-claude-code" target="_blank" rel="noopener" class="hover:text-white/50 transition-colors">GitHub ↗</a>
+      </footer>
+
+    </main>
+  </div>
+
+  <script>
+    // Active nav highlight on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          const active = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+    sections.forEach(s => observer.observe(s));
+  </script>
+</body>
+</html>
