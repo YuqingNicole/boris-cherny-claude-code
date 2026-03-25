@@ -65,6 +65,7 @@
         <a href="#workflow" class="nav-link flex items-center gap-2 px-3 py-1.5 rounded text-white/50 hover:text-white border-l-2 border-transparent hover:border-white/20 transition-all">工作流实践</a>
         <a href="#team" class="nav-link flex items-center gap-2 px-3 py-1.5 rounded text-white/50 hover:text-white border-l-2 border-transparent hover:border-white/20 transition-all">团队设计</a>
         <a href="#principles" class="nav-link flex items-center gap-2 px-3 py-1.5 rounded text-white/50 hover:text-white border-l-2 border-transparent hover:border-white/20 transition-all">核心原则</a>
+        <a href="#lenny" class="nav-link flex items-center gap-2 px-3 py-1.5 rounded text-white/50 hover:text-white border-l-2 border-transparent hover:border-white/20 transition-all">Lenny's Podcast 摘录</a>
         <a href="#sources" class="nav-link flex items-center gap-2 px-3 py-1.5 rounded text-white/50 hover:text-white border-l-2 border-transparent hover:border-white/20 transition-all">来源</a>
       </nav>
     </aside>
@@ -124,11 +125,11 @@
           <span class="text-brand text-sm font-mono">02</span> Claude Code 的诞生故事
         </h2>
         <blockquote class="border-l-2 border-brand pl-5 mb-6">
-          <p class="text-white/70 italic text-base leading-relaxed">"It was an accident that changed everything."</p>
-          <footer class="text-white/30 text-sm mt-2">— PCMag 采访标题</footer>
+          <p class="text-white/70 italic text-base leading-relaxed">"When I first started Claude Code, it was just going to be a little hack. I had no idea that this thing would be useful at all."</p>
+          <footer class="text-white/30 text-sm mt-2">— Boris Cherny, Lenny's Podcast</footer>
         </blockquote>
         <p class="text-white/60 leading-relaxed mb-6">
-          Claude Code 最初只是一个简单的<strong class="text-white/80">终端原型（terminal-based prototype）</strong>，不是经过精心规划的大项目，而是一个快速 hack 演变而来的工具。
+          Claude Code 最初只是一个简单的<strong class="text-white/80">终端原型（terminal-based prototype）</strong>，不是经过精心规划的大项目，而是一个快速 hack 演变而来的工具。内部公告只收到 <strong class="text-white/80">2 个赞</strong>——没人相信命令行工具会成功。
         </p>
         <div class="grid grid-cols-3 gap-3 mb-6">
           <div class="bg-brand/5 border border-brand/15 rounded-xl p-4 text-center">
@@ -146,7 +147,8 @@
         </div>
         <div class="bg-white/[0.03] border border-white/[0.07] rounded-xl p-5">
           <p class="text-white/50 text-sm font-medium mb-2">🔁 Cursor 插曲的意义</p>
-          <p class="text-white/60 text-sm leading-relaxed">Boris 曾离开 Anthropic 去 Cursor，仅两周就返回。这件事本身说明他对 Claude Code 有强烈的未竟心愿——不是表演性的，而是真实的执念。</p>
+          <p class="text-white/60 text-sm leading-relaxed mb-3">Boris 曾离开 Anthropic 去 Cursor，仅两周就返回。他的解释：<em>"Whatever the work might be, no matter how exciting — it's just not a substitute for the mission."</em></p>
+          <p class="text-white/40 text-xs">安全使命是 Anthropic 每个人留下来的唯一原因——Boris 自己验证了这一点。</p>
         </div>
       </section>
 
@@ -385,7 +387,7 @@ always prefer literal unions</code></pre>
         <h2 class="text-xl font-semibold text-white mb-6 flex items-center gap-3">
           <span class="text-brand text-sm font-mono">07</span> 核心原则
         </h2>
-        <p class="text-white/40 text-sm mb-5">Lenny's Podcast 中，Boris 提到他有 3 条原则会和每个新成员分享。</p>
+        <p class="text-white/40 text-sm mb-5">Boris 在 Lenny's Podcast 中分享的团队工作原则（详见下方「Lenny's Podcast 完整摘录」章节）：</p>
         <div class="space-y-3">
           <div class="flex gap-4 bg-white/[0.03] border border-white/[0.07] rounded-xl p-5">
             <span class="text-brand font-bold text-lg w-6 flex-shrink-0">1</span>
@@ -411,10 +413,302 @@ always prefer literal unions</code></pre>
         </div>
       </section>
 
+      <!-- Section: Lenny's Podcast Full Transcript -->
+      <section id="lenny" class="mb-14 scroll-mt-20">
+        <h2 class="text-xl font-semibold text-white mb-2 flex items-center gap-3">
+          <span class="text-brand text-sm font-mono">08</span> 🎙️ Lenny's Podcast 完整摘录
+        </h2>
+        <p class="text-white/30 text-xs mb-8">来源：Lenny's Podcast「Head of Claude Code — What happens after coding is solved」（2026年3月）· 逐字稿整理</p>
+
+        <!-- 1. Origin Story -->
+        <div class="mb-10">
+          <h3 class="text-white/80 font-medium mb-4 flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand inline-block"></span>
+            Claude Code 诞生故事
+          </h3>
+          <blockquote class="border-l-2 border-brand/50 pl-4 mb-4">
+            <p class="text-white/65 italic text-sm leading-relaxed">"When I first started Claude Code, it was just going to be a little hack. We broadly knew at Anthropic that we wanted to ship some kind of coding product. I spent one month hacking, built a bunch of weird prototypes, most of them didn't ship. Then I spent a month doing post-training to understand the research side. Then I came back and just started prototyping what eventually became Claude Code."</p>
+            <footer class="text-white/30 text-xs mt-1.5">— Boris Cherny, Lenny's Podcast</footer>
+          </blockquote>
+          <blockquote class="border-l-2 border-brand/50 pl-4 mb-4">
+            <p class="text-white/65 italic text-sm leading-relaxed">"The very first version — I have a video recording. It was called ClaudeCLI back then. I gave it a bash tool and it just was able to use that to write code to tell me what music I'm listening to when I asked it. And this is the craziest thing — I didn't instruct the model to say use this tool for this. The model was given this tool and figured out how to use it to answer a question I wasn't even sure it could answer."</p>
+            <footer class="text-white/30 text-xs mt-1.5">— Boris Cherny, Lenny's Podcast</footer>
+          </blockquote>
+          <div class="bg-white/[0.03] border border-white/[0.07] rounded-xl p-5 mb-4">
+            <p class="text-white/70 text-sm font-medium mb-2">内部发布的"2 个赞"时刻</p>
+            <p class="text-white/50 text-sm leading-relaxed">Boris 在内部发布了 Claude Code 的公告，<strong class="text-white/70">只收到 2 个赞</strong>——因为大家认为 coding 工具应该是 IDE，没人觉得终端版会有用。他选择继续坚持，因为"你找到一条线，就必须去拉它"。</p>
+          </div>
+          <blockquote class="border-l-2 border-brand/50 pl-4 mb-4">
+            <p class="text-white/65 italic text-sm leading-relaxed">"The team was called the Anthropic Labs team. We built Claude Code, we built MCP, we built the desktop app. You can see the seeds of this idea: coding, then tool use, then computer use — this has been our belief as a company for a long time."</p>
+            <footer class="text-white/30 text-xs mt-1.5">— Boris Cherny, Lenny's Podcast</footer>
+          </blockquote>
+          <blockquote class="border-l-2 border-white/20 pl-4">
+            <p class="text-white/60 italic text-sm leading-relaxed">"The biggest reason we stuck with the terminal was the model is improving so quickly. We felt there wasn't really another form factor that could keep up with it."</p>
+            <footer class="text-white/30 text-xs mt-1.5">— Boris Cherny, Lenny's Podcast</footer>
+          </blockquote>
+        </div>
+
+        <!-- 2. Coding is Solved -->
+        <div class="mb-10">
+          <h3 class="text-white/80 font-medium mb-4 flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand inline-block"></span>
+            "Coding is Solved" — 原话
+          </h3>
+          <div class="bg-gradient-to-br from-brand/10 to-transparent border border-brand/20 rounded-xl p-6 mb-4">
+            <blockquote class="border-l-2 border-brand/50 pl-4">
+              <p class="text-white/80 italic text-base leading-relaxed">"I think at this point it's safe to say that coding is largely solved. At least for the kind of programming that I do, it's just a solved problem because Claude can do it."</p>
+              <footer class="text-white/40 text-xs mt-2">— Boris Cherny, Lenny's Podcast</footer>
+            </blockquote>
+          </div>
+          <blockquote class="border-l-2 border-brand/50 pl-4 mb-4">
+            <p class="text-white/65 italic text-sm leading-relaxed">"Over the next few months I think what we're going to see is across the industry it's going to become increasingly solved — for every kind of codebase, every tech stack that people work on."</p>
+            <footer class="text-white/30 text-xs mt-1.5">— Boris Cherny, Lenny's Podcast</footer>
+          </blockquote>
+          <blockquote class="border-l-2 border-white/20 pl-4">
+            <p class="text-white/60 italic text-sm leading-relaxed">"100% of my code is written by Claude Code. I have not edited a single line by hand since November. Every day I ship 10, 20, 30 PRs. At the moment I have five agents running while we're recording this."</p>
+            <footer class="text-white/30 text-xs mt-1.5">— Boris Cherny, Lenny's Podcast</footer>
+          </blockquote>
+        </div>
+
+        <!-- 3. Software Engineer Title Going Away -->
+        <div class="mb-10">
+          <h3 class="text-white/80 font-medium mb-4 flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand inline-block"></span>
+            "Software Engineer" 头衔将消失
+          </h3>
+          <blockquote class="border-l-2 border-brand/50 pl-4 mb-4">
+            <p class="text-white/65 italic text-sm leading-relaxed">"I do think that there's a future where — I think by the end of the year — what we're going to start to see is these start to get murkier. In some places the title software engineer is going to start to go away. It's just going to be replaced by 'builder', or maybe it's just everyone's going to be a product manager and everyone codes."</p>
+            <footer class="text-white/30 text-xs mt-1.5">— Boris Cherny, Lenny's Podcast</footer>
+          </blockquote>
+          <blockquote class="border-l-2 border-white/20 pl-4">
+            <p class="text-white/60 italic text-sm leading-relaxed">"On the Claude Code team, everyone codes. Our product manager codes, our engineering manager codes, our designer codes, our finance guy codes, our data scientist codes. Everyone on the team codes."</p>
+            <footer class="text-white/30 text-xs mt-1.5">— Boris Cherny, Lenny's Podcast</footer>
+          </blockquote>
+        </div>
+
+        <!-- 4. Printing Press Metaphor -->
+        <div class="mb-10">
+          <h3 class="text-white/80 font-medium mb-4 flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand inline-block"></span>
+            活字印刷机比喻
+          </h3>
+          <blockquote class="border-l-2 border-brand/50 pl-4 mb-4">
+            <p class="text-white/65 italic text-sm leading-relaxed">"In the mid-1400s, literacy was actually very low — sub 1% of the population. It was scribes who did all the writing. They were employed by lords and kings. Then Gutenberg and the printing press came along, and in the 50 years after, more printed material was created than in the thousand years before. The cost went down 100x. Literacy went up to 70% globally over the next 200 years."</p>
+            <footer class="text-white/30 text-xs mt-1.5">— Boris Cherny, Lenny's Podcast</footer>
+          </blockquote>
+          <blockquote class="border-l-2 border-brand/50 pl-4 mb-4">
+            <p class="text-white/65 italic text-sm leading-relaxed">"There was actually a historical document — an interview with a scribe in the 1400s. They were actually very excited about the printing press. They said: 'The thing I don't like doing is copying between books. The thing I do like is drawing the art and book binding. I'm really glad my time is freed up.' As an engineer I feel a parallel — I don't have to do the tedious work of coding anymore. The fun part is figuring out what to build, talking to users, thinking about big systems."</p>
+            <footer class="text-white/30 text-xs mt-1.5">— Boris Cherny, Lenny's Podcast</footer>
+          </blockquote>
+          <blockquote class="border-l-2 border-white/20 pl-4">
+            <p class="text-white/60 italic text-sm leading-relaxed">"I imagine a world a few years in the future where everyone is able to program. Anyone can just build software anytime. And I have no idea what that unlocks. It's just the same way that in the 1400s, no one could have predicted the Renaissance."</p>
+            <footer class="text-white/30 text-xs mt-1.5">— Boris Cherny, Lenny's Podcast</footer>
+          </blockquote>
+        </div>
+
+        <!-- 5. Cowork Product -->
+        <div class="mb-10">
+          <h3 class="text-white/80 font-medium mb-4 flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand inline-block"></span>
+            Cowork 产品 — 是什么、为谁而建
+          </h3>
+          <blockquote class="border-l-2 border-brand/50 pl-4 mb-4">
+            <p class="text-white/65 italic text-sm leading-relaxed">"Co-work is kind of the first way to get at this — bringing agentic AI to people who haven't really used it before. When I think back to engineering a year ago, no one really knew what an agent was. But nowadays it's just the way we do our work. For non-technical folks today, all they've used is conversational AI — a chatbot. No one has really used an agent before. Co-work might be the first time they're using something that actually acts."</p>
+            <footer class="text-white/30 text-xs mt-1.5">— Boris Cherny, Lenny's Podcast</footer>
+          </blockquote>
+          <div class="bg-white/[0.03] border border-white/[0.07] rounded-xl p-5 mb-4">
+            <p class="text-white/70 text-sm font-medium mb-2">10 天内从 0 到百万用户</p>
+            <p class="text-white/50 text-sm leading-relaxed">Cowork 在 10 天内完全用 Claude Code 构建，包含完整的虚拟机沙箱安全系统。发布后比 Claude Code 早期增长快得多。Boris："Claude Code 发布时不是立即爆红，Cowork 发布时是。"</p>
+          </div>
+          <blockquote class="border-l-2 border-white/20 pl-4">
+            <p class="text-white/60 italic text-sm leading-relaxed">"I had to pay a parking ticket the other day. I just had co-work do it. All of my project management for the team — co-work does all of it. It's syncing stuff between spreadsheets, messaging people on Slack and email."</p>
+            <footer class="text-white/30 text-xs mt-1.5">— Boris Cherny, Lenny's Podcast</footer>
+          </blockquote>
+        </div>
+
+        <!-- 6. Latent Demand -->
+        <div class="mb-10">
+          <h3 class="text-white/80 font-medium mb-4 flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand inline-block"></span>
+            潜在需求（Latent Demand）— 完整阐释
+          </h3>
+          <blockquote class="border-l-2 border-brand/50 pl-4 mb-4">
+            <p class="text-white/65 italic text-sm leading-relaxed">"Latent demand is this idea that if you build a product in a way that can be hacked or misused by people in a way it wasn't really designed for — to do something that they want to do — then this helps you as the product builder learn where to take the product next."</p>
+            <footer class="text-white/30 text-xs mt-1.5">— Boris Cherny, Lenny's Podcast</footer>
+          </blockquote>
+          <div class="bg-white/[0.03] border border-white/[0.07] rounded-xl p-5 mb-4">
+            <p class="text-white/70 text-sm font-medium mb-2">Facebook Marketplace 案例</p>
+            <p class="text-white/50 text-sm leading-relaxed">40% 的 Facebook 群组帖子是买卖交易。没有人为此设计产品，但用户自发"滥用"了群组功能。这就是潜在需求——当你看到这个信号，就知道要为此专门造一个产品。</p>
+          </div>
+          <div class="bg-white/[0.03] border border-white/[0.07] rounded-xl p-5 mb-4">
+            <p class="text-white/70 text-sm font-medium mb-2">Claude Code 的非技术用户奇观</p>
+            <p class="text-white/50 text-sm leading-relaxed">Boris 发现大量用户用 Claude Code（一个命令行工具）做完全非技术的事情：种番茄、分析基因组、从损坏硬盘恢复婚礼照片、分析 MRI 影像。这直接催生了 Cowork。</p>
+          </div>
+          <blockquote class="border-l-2 border-brand/50 pl-4 mb-4">
+            <p class="text-white/65 italic text-sm leading-relaxed">"I remember walking into the office and our data scientist Brendan had Claude Code on his computer — just a terminal up. I was shocked. He figured out how to open the terminal, downloaded Node.js, downloaded Claude Code, and was doing SQL analysis in a terminal. The next week all the data scientists were doing the same thing."</p>
+            <footer class="text-white/30 text-xs mt-1.5">— Boris Cherny, Lenny's Podcast</footer>
+          </blockquote>
+          <blockquote class="border-l-2 border-white/20 pl-4">
+            <p class="text-white/60 italic text-sm leading-relaxed">"The modern framing I've been seeing in the last 6 months: look at what the model is trying to do and make that a little bit easier. For Claude Code, we inverted the approach — the product is the model. We want to expose it. Put the minimal scaffolding around it. Let it decide which tools to run and in what order."</p>
+            <footer class="text-white/30 text-xs mt-1.5">— Boris Cherny, Lenny's Podcast</footer>
+          </blockquote>
+        </div>
+
+        <!-- 7. Underfunding + Tokens -->
+        <div class="mb-10">
+          <h3 class="text-white/80 font-medium mb-4 flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand inline-block"></span>
+            故意欠配置 + 无限 Token 策略
+          </h3>
+          <blockquote class="border-l-2 border-brand/50 pl-4 mb-4">
+            <p class="text-white/65 italic text-sm leading-relaxed">"There's this interesting thing that happens when you underfund everything a little bit — people are forced to use Claude. For work where sometimes we just put one engineer on a project, the way they're able to ship really quickly is because they want to ship quickly. And if you have Claude, you can just use that to automate a lot of work."</p>
+            <footer class="text-white/30 text-xs mt-1.5">— Boris Cherny, Lenny's Podcast</footer>
+          </blockquote>
+          <blockquote class="border-l-2 border-brand/50 pl-4 mb-4">
+            <p class="text-white/65 italic text-sm leading-relaxed">"My advice generally: don't try to cost cut at the beginning. Start by just giving engineers as many tokens as possible. We're starting to see 'unlimited tokens' come up as a perk at some companies. At the beginning you just want to throw a lot of tokens at it and see if the idea works and give engineers the freedom to do that."</p>
+            <footer class="text-white/30 text-xs mt-1.5">— Boris Cherny, Lenny's Podcast</footer>
+          </blockquote>
+          <blockquote class="border-l-2 border-white/20 pl-4">
+            <p class="text-white/60 italic text-sm leading-relaxed">"At Anthropic we're starting to see some engineers spending hundreds of thousands a month in tokens."</p>
+            <footer class="text-white/30 text-xs mt-1.5">— Boris Cherny, Lenny's Podcast</footer>
+          </blockquote>
+        </div>
+
+        <!-- 8. Cursor Story -->
+        <div class="mb-10">
+          <h3 class="text-white/80 font-medium mb-4 flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand inline-block"></span>
+            为什么离开 Anthropic 去 Cursor，又两周后回来
+          </h3>
+          <blockquote class="border-l-2 border-brand/50 pl-4 mb-4">
+            <p class="text-white/65 italic text-sm leading-relaxed">"I joined Cursor because I'm a big fan of the product. Honestly I met the team and was just really impressed. They're an awesome team. They saw where AI coding was going before a lot of people did. The idea of building good product was very exciting for me."</p>
+            <footer class="text-white/30 text-xs mt-1.5">— Boris Cherny, Lenny's Podcast</footer>
+          </blockquote>
+          <blockquote class="border-l-2 border-brand/50 pl-4 mb-4">
+            <p class="text-white/65 italic text-sm leading-relaxed">"As soon as I got there, what I started to realize is what I really missed about Anthropic was the mission. If you ask anyone at Anthropic why they're here, the answer is always going to be safety. This mission-drivenness just really resonated with me. And I just know personally it's something I need in order to be happy. Whatever the work might be, no matter how exciting — even building a really cool product — it's just not really a substitute for that."</p>
+            <footer class="text-white/30 text-xs mt-1.5">— Boris Cherny, Lenny's Podcast</footer>
+          </blockquote>
+        </div>
+
+        <!-- 9. Three Principles -->
+        <div class="mb-10">
+          <h3 class="text-white/80 font-medium mb-4 flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand inline-block"></span>
+            他分享给每个新成员的原则
+          </h3>
+          <p class="text-white/50 text-sm mb-4">在 Lenny's Podcast 中 Boris 提及的团队核心原则（原文摘录）：</p>
+          <div class="space-y-3 mb-4">
+            <div class="flex gap-4 bg-white/[0.03] border border-white/[0.07] rounded-xl p-5">
+              <span class="text-brand font-bold text-lg w-6 flex-shrink-0">1</span>
+              <div>
+                <p class="text-white/70 font-medium mb-1">欠配置一点点（Underfund slightly）</p>
+                <blockquote class="border-l-2 border-brand/50 pl-3 mt-2">
+                  <p class="text-white/55 italic text-sm">"When you underfund things a little bit, people are forced to use Claude. This is something we see over and over."</p>
+                </blockquote>
+              </div>
+            </div>
+            <div class="flex gap-4 bg-white/[0.03] border border-white/[0.07] rounded-xl p-5">
+              <span class="text-brand font-bold text-lg w-6 flex-shrink-0">2</span>
+              <div>
+                <p class="text-white/70 font-medium mb-1">能今天做的事，今天就做（Ship today, not tomorrow）</p>
+                <blockquote class="border-l-2 border-brand/50 pl-3 mt-2">
+                  <p class="text-white/55 italic text-sm">"If you can do something today, you should just do it today. Early on it was really important because it was just me — our only advantage was speed. If you want to go faster, a really good way is to just have Claude do more stuff."</p>
+                </blockquote>
+              </div>
+            </div>
+            <div class="flex gap-4 bg-white/[0.03] border border-white/[0.07] rounded-xl p-5">
+              <span class="text-brand font-bold text-lg w-6 flex-shrink-0">3</span>
+              <div>
+                <p class="text-white/70 font-medium mb-1">Build for the model 6 months from now（为 6 个月后的模型而建）</p>
+                <blockquote class="border-l-2 border-brand/50 pl-3 mt-2">
+                  <p class="text-white/55 italic text-sm">"This is advice I give to a lot of folks, especially people building startups. It's going to be uncomfortable because your product-market fit won't be very good for the first 6 months. But if you build for the model 6 months out, when that model comes out you're just going to hit the ground running."</p>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+          <p class="text-white/30 text-xs">注：在播客中 Boris 还提到"best thing you can do is have Claude do it"作为团队口头禅，以及"bitter lesson"（更通用的模型总会打败特化模型）作为产品决策依据。</p>
+        </div>
+
+        <!-- 10. Generalists Winning -->
+        <div class="mb-10">
+          <h3 class="text-white/80 font-medium mb-4 flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand inline-block"></span>
+            通才在 AI 时代的优势
+          </h3>
+          <blockquote class="border-l-2 border-brand/50 pl-4 mb-4">
+            <p class="text-white/65 italic text-sm leading-relaxed">"Try to be a generalist more than you have in the past. Some of the most effective engineers I work with every day — they cross over disciplines. Some of the strongest engineers are hybrid product and infrastructure engineers, or product engineers with really great design sense, or an engineer with a really good sense of the business, or an engineer that loves talking to users."</p>
+            <footer class="text-white/30 text-xs mt-1.5">— Boris Cherny, Lenny's Podcast</footer>
+          </blockquote>
+          <blockquote class="border-l-2 border-white/20 pl-4">
+            <p class="text-white/60 italic text-sm leading-relaxed">"A lot of the people that will be rewarded the most over the next few years won't just be AI native. They're curious, they're generalists, they cross over multiple disciplines and can think about the broader problem they're solving — rather than just the engineering part of it."</p>
+            <footer class="text-white/30 text-xs mt-1.5">— Boris Cherny, Lenny's Podcast</footer>
+          </blockquote>
+        </div>
+
+        <!-- 11. ASL-4 Safety -->
+        <div class="mb-10">
+          <h3 class="text-white/80 font-medium mb-4 flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand inline-block"></span>
+            安全与 ASL-4 — 为什么安全是一切的核心
+          </h3>
+          <blockquote class="border-l-2 border-brand/50 pl-4 mb-4">
+            <p class="text-white/65 italic text-sm leading-relaxed">"There are three layers of safety. The lowest level is alignment and mechanistic interpretability — when we train the model, we want to make sure it's safe. We have pretty sophisticated technology to understand what's happening in the neurons, to trace it. If there's a neuron related to deception, we're starting to get to the point where we can monitor it. The second layer is evals — a laboratory setting, the model in a petri dish. The third layer is seeing how the model behaves in the wild."</p>
+            <footer class="text-white/30 text-xs mt-1.5">— Boris Cherny, Lenny's Podcast</footer>
+          </blockquote>
+          <blockquote class="border-l-2 border-white/20 pl-4 mb-4">
+            <p class="text-white/60 italic text-sm leading-relaxed">"Opus 4 was our first ASL-3 class model. We just saw this inflection — everyone started to use Claude Code for the first time and our growth really went exponential."</p>
+            <footer class="text-white/30 text-xs mt-1.5">— Boris Cherny, Lenny's Podcast</footer>
+          </blockquote>
+          <blockquote class="border-l-2 border-white/20 pl-4">
+            <p class="text-white/60 italic text-sm leading-relaxed">"We released Claude Code really early because we wanted to study safety. We used it within Anthropic for 4 or 5 months before we released it — we weren't sure if it was safe. This was the first big agent that folks had released at that point."</p>
+            <footer class="text-white/30 text-xs mt-1.5">— Boris Cherny, Lenny's Podcast</footer>
+          </blockquote>
+        </div>
+
+        <!-- 12. Future of All Computer-Based Work -->
+        <div class="mb-10">
+          <h3 class="text-white/80 font-medium mb-4 flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand inline-block"></span>
+            所有电脑工作的未来
+          </h3>
+          <blockquote class="border-l-2 border-brand/50 pl-4 mb-4">
+            <p class="text-white/65 italic text-sm leading-relaxed">"It's going to be a lot of the roles adjacent to engineering — product managers, design, data science. It is going to expand to pretty much any kind of work you can do on a computer, because the model is just going to get better and better at this. An agent is an LM that's able to use tools. It doesn't just talk, it can actually act. It can use your Google docs, send email, run commands on your computer. Any kind of job where you use computer tools — I think this is going to be next."</p>
+            <footer class="text-white/30 text-xs mt-1.5">— Boris Cherny, Lenny's Podcast</footer>
+          </blockquote>
+          <blockquote class="border-l-2 border-white/20 pl-4">
+            <p class="text-white/60 italic text-sm leading-relaxed">"Models are running for very long periods of time now. With Sonnet 3.5 a year ago, it could run maybe 15-30 seconds before going off the rails. Nowadays with Opus 4.6, it'll run maybe 10-30 minutes unattended. Some have run for hours or even days. I think over time this is going to become more and more normal."</p>
+            <footer class="text-white/30 text-xs mt-1.5">— Boris Cherny, Lenny's Podcast</footer>
+          </blockquote>
+        </div>
+
+        <!-- 13. Advice to Worried People -->
+        <div class="mb-10">
+          <h3 class="text-white/80 font-medium mb-4 flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand inline-block"></span>
+            给感到不安的人的建议
+          </h3>
+          <blockquote class="border-l-2 border-brand/50 pl-4 mb-4">
+            <p class="text-white/65 italic text-sm leading-relaxed">"Experiment with the tools, get to know them, don't be scared of them. Just dive in, try them, be on the bleeding edge, beyond the frontier. Maybe the second piece of advice is try to be a generalist more than you have in the past."</p>
+            <footer class="text-white/30 text-xs mt-1.5">— Boris Cherny, Lenny's Podcast</footer>
+          </blockquote>
+          <blockquote class="border-l-2 border-white/20 pl-4 mb-4">
+            <p class="text-white/60 italic text-sm leading-relaxed">"I have never enjoyed coding as much as I do today because I don't have to deal with all the minutia."</p>
+            <footer class="text-white/30 text-xs mt-1.5">— Boris Cherny, Lenny's Podcast</footer>
+          </blockquote>
+          <div class="bg-white/[0.03] border border-white/[0.07] rounded-xl p-5">
+            <p class="text-white/70 text-sm font-medium mb-2">他的 motto：Common Sense</p>
+            <blockquote class="border-l-2 border-brand/50 pl-3">
+              <p class="text-white/55 italic text-sm">"Use common sense. A lot of the failures I see in a work environment is people failing to use common sense — they follow a process without thinking about it, or they're working on a product that's not a good idea and they're just following the momentum. The best results are people thinking from first principles and developing their own common sense. If something smells weird, it's probably not a good idea."</p>
+            </blockquote>
+          </div>
+        </div>
+
+      </section>
+
       <!-- Section: Sources -->
       <section id="sources" class="mb-14 scroll-mt-20">
         <h2 class="text-xl font-semibold text-white mb-6 flex items-center gap-3">
-          <span class="text-brand text-sm font-mono">08</span> 来源
+          <span class="text-brand text-sm font-mono">09</span> 来源
         </h2>
         <div class="grid sm:grid-cols-2 gap-3">
           <a href="https://www.lennysnewsletter.com/p/head-of-claude-code-what-happens" target="_blank" rel="noopener" class="group bg-white/[0.03] border border-white/[0.07] hover:border-brand/30 rounded-xl p-4 transition-colors block">
